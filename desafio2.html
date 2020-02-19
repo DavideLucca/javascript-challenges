@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Desafio 2 - Javascript</title>
+    </head>
+    <body>
+        <h2>Desafio 2 - Javascript</h2>
+        <button id="btn">Clicar</button>
+
+        <div class="redSquare">
+
+        </div>
+
+        <script>
+            // 1º exercicio
+            var buttonElement = document.getElementById('btn');
+            buttonElement.onclick = function() {
+                var redSquareElement = document.createElement('div');
+                redSquareElement.style.height = 100;
+                redSquareElement.style.width = 100;
+                redSquareElement.style.backgroundColor = '#f00';
+                var container = document.getElementsByClassName('redSquare')[0];
+                container.appendChild(redSquareElement);
+
+                redSquareElement.onmouseover = function() {
+                    console.log('onmmouseover');
+                }
+            }
+
+            // 2º exercicio
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            var newColor = getRandomColor();
+        </script>
+    </body>
+</html>
