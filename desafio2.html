@@ -10,6 +10,12 @@
 
         </div>
 
+        <ul id="list">
+        </ul>
+
+        <input type="text" name="nome">
+        <button onclick="adicionar()">Adicionar</button>
+
         <script>
             // 1º exercicio
             var buttonElement = document.getElementById('btn');
@@ -20,10 +26,6 @@
                 redSquareElement.style.backgroundColor = '#f00';
                 var container = document.getElementsByClassName('redSquare')[0];
                 container.appendChild(redSquareElement);
-
-                redSquareElement.onmouseover = function() {
-                    console.log('onmmouseover');
-                }
             }
 
             // 2º exercicio
@@ -37,6 +39,27 @@
             }
 
             var newColor = getRandomColor();
+
+            // 3º exercicio
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+            for(var nome of nomes) {
+                var list = document.getElementById('list');
+                var node = document.createElement('li');
+                var textNode = document.createTextNode(nome);
+                node.appendChild(textNode);
+                list.appendChild(node);
+            }
+
+            // 4º exercicio
+            function adicionar() {
+                var inputValue = document.getElementsByName('nome');
+                var newNode = document.createElement('li');
+                var textNewNode = document.createTextNode(inputValue);
+                newNode.appendChild(textNewNode);
+                list.appendChild(newNode);
+                var erase = inputValue.value;
+                erase = '';
+            }
         </script>
     </body>
 </html>
