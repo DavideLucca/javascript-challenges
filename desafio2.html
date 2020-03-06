@@ -35,10 +35,16 @@
                 for (var i = 0; i < 6; i++) {
                     color += letters[Math.floor(Math.random() * 16)];
                 }
+                console.log(color);
                 return color;
             }
 
             var newColor = getRandomColor();
+            
+            buttonElement.onmouseover = function() {
+                var divElement = document.querySelector('div.redSquare');
+                console.log(divElement);
+            }
 
             // 3º exercicio
             var nomes = ["Diego", "Gabriel", "Lucas"];
@@ -52,13 +58,13 @@
 
             // 4º exercicio
             function adicionar() {
-                var inputValue = document.getElementsByName('nome');
+                var inputValue = document.querySelector('input[name=nome]');
+                var inputText = inputValue.value;
                 var newNode = document.createElement('li');
-                var textNewNode = document.createTextNode(inputValue);
+                var textNewNode = document.createTextNode(inputText);
                 newNode.appendChild(textNewNode);
                 list.appendChild(newNode);
-                var erase = inputValue.value;
-                erase = '';
+                inputValue.value = '';
             }
         </script>
     </body>
