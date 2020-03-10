@@ -7,7 +7,6 @@
         <button id="btn">Clicar</button>
 
         <div class="redSquare">
-
         </div>
 
         <ul id="list">
@@ -26,6 +25,9 @@
                 redSquareElement.style.backgroundColor = '#f00';
                 var container = document.getElementsByClassName('redSquare')[0];
                 container.appendChild(redSquareElement);
+                redSquareElement.onmouseover = function() {
+                    redSquareElement.style.backgroundColor = newColor;
+                }
             }
 
             // 2º exercicio
@@ -40,10 +42,12 @@
             }
 
             var newColor = getRandomColor();
-            var divElement = document.querySelector('div.redSquare');
-            divElement.onmouseover = function() {
-                console.log()
-            }
+            // var divElement = document.querySelector('div.redSquare');
+            // divElement.onmouseover = function() {
+            //     console.log(newColor);
+            //     var divRed = document.querySelector('div.redSquare');
+            //     divRed.style.backgroundColor = newColor;
+            // }
 
             // 3º exercicio
             var nomes = ["Diego", "Gabriel", "Lucas"];
